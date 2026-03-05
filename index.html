@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Salinas Details | Mobile Car Detailing</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#0f0f0f;
+color:white;
+}
+
+header{
+height:85vh;
+background:url("https://images.unsplash.com/photo-1607860108855-64acf2078ed9") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+header h1{
+font-size:60px;
+}
+
+.btn{
+background:#00aaff;
+padding:15px 30px;
+border-radius:6px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+section{
+padding:60px 10%;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1c1c1c;
+padding:25px;
+border-radius:10px;
+text-align:center;
+}
+
+.quote-box{
+max-width:500px;
+margin:auto;
+background:#1c1c1c;
+padding:30px;
+border-radius:10px;
+}
+
+select,input{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:20px;
+border:none;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#00aaff;
+border:none;
+color:white;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+#price{
+font-size:28px;
+text-align:center;
+margin-top:20px;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div>
+
+<h1>Salinas Details</h1>
+
+<p>Mobile Interior & Exterior Car Detailing</p>
+
+<a class="btn" href="#quote">Free Quote</a>
+
+</div>
+
+</header>
+
+<section>
+
+<h2>Our Packages</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Sedan</h3>
+<p>Interior + Exterior Detail</p>
+<p>$120</p>
+</div>
+
+<div class="card">
+<h3>SUV / Truck</h3>
+<p>Interior + Exterior Detail</p>
+<p>$150</p>
+</div>
+
+<div class="card">
+<h3>Large SUV / Van</h3>
+<p>Interior + Exterior Detail</p>
+<p>$180+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="quote">
+
+<h2>Instant Quote</h2>
+
+<div class="quote-box">
+
+<select id="vehicle">
+<option value="120">Sedan</option>
+<option value="150">SUV / Truck</option>
+<option value="180">Large SUV / Van</option>
+</select>
+
+<select id="condition">
+<option value="0">Normal Condition</option>
+<option value="25">Very Dirty +$25</option>
+<option value="50">Extremely Dirty +$50</option>
+</select>
+
+<select id="addon">
+<option value="0">No Add-ons</option>
+<option value="25">Pet Hair Removal +$25</option>
+<option value="40">Seat Shampoo +$40</option>
+<option value="50">Wax Protection +$50</option>
+</select>
+
+<button onclick="quote()">Calculate Price</button>
+
+<div id="price"></div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Salinas Details</h3>
+
+<p>Mobile Car Detailing</p>
+
+<p>Salinas, California</p>
+
+</footer>
+
+<script>
+
+function quote(){
+
+let vehicle=parseInt(document.getElementById("vehicle").value);
+
+let condition=parseInt(document.getElementById("condition").value);
+
+let addon=parseInt(document.getElementById("addon").value);
+
+let total=vehicle+condition+addon;
+
+document.getElementById("price").innerHTML="$"+total;
+
+}
+
+</script>
+
+</body>
+</html>

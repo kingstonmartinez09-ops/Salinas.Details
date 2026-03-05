@@ -29,6 +29,10 @@ header h1{
 font-size:60px;
 }
 
+header p{
+font-size:20px;
+}
+
 .btn{
 background:#00aaff;
 padding:15px 30px;
@@ -108,7 +112,9 @@ padding:30px;
 
 <p>Mobile Interior & Exterior Car Detailing</p>
 
-<a class="btn" href="#quote">Free Quote</a>
+<p>Serving Salinas, California</p>
+
+<a class="btn" href="#quote">Get Free Quote</a>
 
 </div>
 
@@ -116,26 +122,26 @@ padding:30px;
 
 <section>
 
-<h2>Our Packages</h2>
+<h2 style="text-align:center">Our Packages</h2>
 
 <div class="services">
 
 <div class="card">
-<h3>Sedan</h3>
-<p>Interior + Exterior Detail</p>
-<p>$120</p>
+<h3>Sedan Detail</h3>
+<p>Interior + Exterior Cleaning</p>
+<p>Starting at <strong>$120</strong></p>
 </div>
 
 <div class="card">
-<h3>SUV / Truck</h3>
-<p>Interior + Exterior Detail</p>
-<p>$150</p>
+<h3>SUV / Truck Detail</h3>
+<p>Interior + Exterior Cleaning</p>
+<p>Starting at <strong>$150</strong></p>
 </div>
 
 <div class="card">
-<h3>Large SUV / Van</h3>
-<p>Interior + Exterior Detail</p>
-<p>$180+</p>
+<h3>Large SUV / Van Detail</h3>
+<p>Interior + Exterior Cleaning</p>
+<p>Starting at <strong>$180+</strong></p>
 </div>
 
 </div>
@@ -144,34 +150,81 @@ padding:30px;
 
 <section id="quote">
 
-<h2>Instant Quote</h2>
+<h2 style="text-align:center">Instant Quote</h2>
 
 <div class="quote-box">
 
+<label>Vehicle Type</label>
+
 <select id="vehicle">
+
 <option value="120">Sedan</option>
 <option value="150">SUV / Truck</option>
 <option value="180">Large SUV / Van</option>
+
 </select>
+
+<label>Vehicle Condition</label>
 
 <select id="condition">
-<option value="0">Normal Condition</option>
-<option value="25">Very Dirty +$25</option>
-<option value="50">Extremely Dirty +$50</option>
+
+<option value="0">Normal</option>
+<option value="25">Very Dirty (+$25)</option>
+<option value="50">Extremely Dirty (+$50)</option>
+
 </select>
+
+<label>Add-ons</label>
 
 <select id="addon">
-<option value="0">No Add-ons</option>
-<option value="25">Pet Hair Removal +$25</option>
-<option value="40">Seat Shampoo +$40</option>
-<option value="50">Wax Protection +$50</option>
+
+<option value="0">No Add-on</option>
+<option value="25">Pet Hair Removal (+$25)</option>
+<option value="40">Seat Shampoo (+$40)</option>
+<option value="50">Wax Protection (+$50)</option>
+
 </select>
 
-<button onclick="quote()">Calculate Price</button>
+<button onclick="calculateQuote()">Calculate Price</button>
 
 <div id="price"></div>
 
 </div>
+
+</section>
+
+<section>
+
+<h2 style="text-align:center">Why Choose Salinas Details</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Mobile Service</h3>
+<p>We come directly to your home or workplace.</p>
+</div>
+
+<div class="card">
+<h3>Professional Equipment</h3>
+<p>High-quality detailing tools and products.</p>
+</div>
+
+<div class="card">
+<h3>Affordable Pricing</h3>
+<p>Professional detailing without dealership prices.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 style="text-align:center">Service Area</h2>
+
+<p style="text-align:center;font-size:18px">
+Serving Salinas, California and surrounding areas.
+</p>
 
 </section>
 
@@ -187,17 +240,15 @@ padding:30px;
 
 <script>
 
-function quote(){
+function calculateQuote(){
 
 let vehicle=parseInt(document.getElementById("vehicle").value);
-
 let condition=parseInt(document.getElementById("condition").value);
-
 let addon=parseInt(document.getElementById("addon").value);
 
 let total=vehicle+condition+addon;
 
-document.getElementById("price").innerHTML="$"+total;
+document.getElementById("price").innerHTML="Estimated Price: $" + total;
 
 }
 
